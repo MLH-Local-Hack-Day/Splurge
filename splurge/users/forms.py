@@ -61,6 +61,6 @@ class SignupForm(forms.Form):
 		#data.pop('avatar')
 		#data['profile_pic'] = avatar
 
-		user = User.objects.create_user(**data)
+		User.objects.create_user(**data)
 		#profile = ShopUser(user=user)
-		profile.save()
+		#profile.save()
