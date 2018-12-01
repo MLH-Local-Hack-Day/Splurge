@@ -27,11 +27,16 @@
 						<div class="inner">
 							<h2>Menu</h2>
 							<ul class="links">
-								<li><a href="{% url 'index' %}">Home</a></li>
+								<li><a href="{% url 'index' %}">Inicio</a></li>
 								<li><a href="generic.html">Generic</a></li>
 								<li><a href="elements.html">Elements</a></li>
-								<li><a href="{% url 'login' %}">Log In</a></li>
-								<li><a href="{% url 'signup' %}">Sign Up</a></li>
+								{% if user.is_authenticated %}
+								<li><a href="elements.html">Perfil: {{user.username}}</a></li>
+								<li><a href="{% url 'logout' %}">Salir</a></li>
+								{% else %}
+								<li><a href="{% url 'login' %}">Inicia sesión</a></li>
+								<li><a href="{% url 'signup' %}">Regístrate</a></li>
+								{% endif %}
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -60,7 +65,7 @@
 											Benefíciate de los servicios que tenemos para organizadores y para los invitados.
 											Hacer fiestas nunca había sido tan fácil.
 										</p>
-										<a href="#" class="special">Descubre más</a>
+										<a href="{% url 'Descubremas1' %}" class="special">Descubre más</a>
 									</div>
 								</div>
 							</section>
@@ -75,7 +80,7 @@
 											Puedes acumular puntos para tener prioridad en eventos y lugares de moda.
 											Hazle saber a los organizadores sobre ti y sé el rey de la fiesta.
 										</p>
-										<a href="#" class="special">Learn more</a>
+										<a href="{% url 'Descubremas2' %}" class="special">Learn more</a>
 									</div>
 								</div>
 							</section>
@@ -89,7 +94,7 @@
 										<p>
 											Registra tus eventos y se el mejor host.
 										</p>
-										<a href="#" class="special">Learn more</a>
+										<a href="{% url 'Descubremas3' %}" class="special">Learn more</a>
 									</div>
 								</div>
 							</section>
@@ -107,7 +112,7 @@
 											<p>Deja de preocuparte por no olvidar tu entrada.
 												Ahora todo es mucho más sencillo.
 											</p>
-											<a href="#" class="special">Learn more</a>
+											<a href="{% url 'Descubremas4' %}" class="special">Learn more</a>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="{% static 'images/sorpresa.jpg' %}" alt="" /></a>
