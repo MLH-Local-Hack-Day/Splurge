@@ -29,7 +29,8 @@
 								<li><a href="generic.html">Generic</a></li>
 								<li><a href="elements.html">Elements</a></li>
 								{% if user.is_authenticated %}
-								<li><a href="elements.html">{{user.username}}</a></li>
+								<li><a href="elements.html">Perfil: {{user.username}}</a></li>
+								<li><a href="{% url 'logout' %}">Salir</a></li>
 								{% else %}
 								<li><a href="{% url 'login' %}">Inicia sesión</a></li>
 								<li><a href="{% url 'signup' %}">Regístrate</a></li>
