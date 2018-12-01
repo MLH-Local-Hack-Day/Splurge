@@ -28,8 +28,12 @@
 								<li><a href="{% url 'index' %}">Inicio</a></li>
 								<li><a href="generic.html">Generic</a></li>
 								<li><a href="elements.html">Elements</a></li>
+								{% if user.is_authenticated %}
+								<li><a href="elements.html">{{user.username}}</a></li>
+								{% else %}
 								<li><a href="{% url 'login' %}">Inicia sesión</a></li>
 								<li><a href="{% url 'signup' %}">Regístrate</a></li>
+								{% endif %}
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
