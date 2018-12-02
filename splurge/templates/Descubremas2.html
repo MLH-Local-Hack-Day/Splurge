@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Splurge info</title>
-  </head>
-  <body>
 
-    <h1>ACUMULA PUNTOS </h1>
-    <p>Al ser miembro comienzas a acomular puntos por cada evento que asistas, y
+{% extends 'base.html' %}
+
+{% block title %}ACUMULA PUNTOS{% endblock %}
+{% block content-title %}ACUMULA PUNTOS{% endblock %}
+
+
+{% block content %} 
+ <p>Al ser miembro comienzas a acomular puntos por cada evento que asistas, y
       te diviertas en el, mientras mas seas el alma de la fiesta mas puntos
       obtendras,los puntos te dan los siguientes beneficios:</p>
       <ul>
@@ -18,6 +18,6 @@
 	<li>Consideracion para ser parte de la zona V.I.P</li>
 	<li>Descuento en bebidas dentro del club</li>
       </ul>
-  </body>
-  </html>
-      
+{% endblock %}
+
+
