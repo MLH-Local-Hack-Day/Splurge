@@ -1,7 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from django.urls import reverse, reverse_lazy
 
 def index(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+    else:
+        return render(request, 'index.html')
 
 def descubremas1(request):
     return render(request, 'Descubremas1.html')

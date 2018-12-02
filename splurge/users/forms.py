@@ -2,6 +2,8 @@ from django import forms
 
 from django.contrib.auth.models import User
 
+from users.models import AppUser
+
 class SignupForm(forms.Form):
 
 	username = forms.CharField(min_length=4, max_length=15)
@@ -61,6 +63,6 @@ class SignupForm(forms.Form):
 		#data.pop('avatar')
 		#data['profile_pic'] = avatar
 
-		User.objects.create_user(**data)
-		#profile = ShopUser(user=user)
-		#profile.save()
+		user = User.objects.create_user(**data)
+		profile = AppUser(user=user)
+		profile.save()

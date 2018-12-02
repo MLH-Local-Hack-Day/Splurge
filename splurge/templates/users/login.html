@@ -6,32 +6,36 @@
     Ingresa tus datos en <strong>Splurge</strong> para disfrutar de los beneficios que tenemos para ti 
 {% endblock %}
 
-{% block content %} 
-    <section>
-        <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            {% if form.errors %}
-                <p>
-                    Tu nombre de usuario y contraseña no coinciden. Inténtalo de nuevo.
-                </p>
-            {% endif%}
-            <div class="row gtr-uniform">
-                <div class="col-12">
-                    <label for="demo-name">Nombre de usuario</label>
-                    <input type="text" name="username" id="demo-name" placeholder="Nombre" value=""
-                     required autofocus/>
-                </div>
-                <div class="col-12">
-                    <label for="demo-email">Contraseña</label>
-                    <input type="password" name="password" id="demo-email" placeholder="Contraseña" value="" required />
-                </div>
-                <div class="col-12">
-                    <ul class="actions">
-                        <li><input type="submit" value="Iniciar sesión" class="primary" /></li>
-                        <li><input type="reset" value="Regístrate" /></li>
-                    </ul>
-                </div>
-            </div>
-        </form>
-    </section>
+{% block content %}
+    <div class="wrapper">
+		<div class="inner">
+                    <section>
+                        <form method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            {% if form.errors %}
+                                <p>
+                                    Tu nombre de usuario y contraseña no coinciden. Inténtalo de nuevo.
+                                </p>
+                            {% endif%}
+                            <div class="row gtr-uniform">
+                                <div class="col-12">
+                                    <label for="demo-name">Nombre de usuario</label>
+                                    <input type="text" name="username" id="demo-name" placeholder="Nombre" value=""
+                                     required autofocus/>
+                                </div>
+                                <div class="col-12">
+                                    <label for="demo-email">Contraseña</label>
+                                    <input type="password" name="password" id="demo-email" placeholder="Contraseña" value="" required />
+                                </div>
+                                <div class="col-12">
+                                    <p>¿No tienes una cuenta? <a href="{% url 'signup' %}">Regístrate</a></p>
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Iniciar sesión" class="primary" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>						
+		</div>
+	</div>
 {% endblock %}

@@ -6,7 +6,9 @@
     Regístrate en <strong>Splurge</strong> para disfrutar de los beneficios que tenemos para ti 
 {% endblock %}
 
-{% block content %} 
+{% block content %}
+<div class="wrapper spotlight">
+	<div class="inner">
     <section>
         <form method="post" action="{% url 'signup' %}">
             {% csrf_token %}
@@ -47,12 +49,14 @@
                      required/>
                 </div>
                 <div class="col-12">
+                    <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia sesión</a></p>
                     <ul class="actions">
                         <li><input type="submit" value="Regístrate" class="primary" /></li>
-                        <li><input type="reset" value="Resetear" /></li>
                     </ul>
                 </div>
             </div>
         </form>
     </section>
+    </div>
+</div>
 {% endblock %}

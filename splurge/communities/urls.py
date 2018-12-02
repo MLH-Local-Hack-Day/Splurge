@@ -5,5 +5,5 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    #path('', views.communities, name='communities'),
+    path('dashboard', views.dashboard, name='dashboard'),
 ]
