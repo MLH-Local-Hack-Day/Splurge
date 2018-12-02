@@ -11,9 +11,9 @@
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {% if form.errors %}
-                <pre>
+                <p>
                     Tu nombre de usuario y contraseña no coinciden. Inténtalo de nuevo.
-                </pre>
+                </p>
             {% endif%}
             <div class="row gtr-uniform">
                 <div class="col-12">

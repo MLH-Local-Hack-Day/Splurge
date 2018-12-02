@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Registro{% endblock %}
+{% block content-title %}Regístrate{% endblock %}
+{% block content-description %} 
+    Regístrate en <strong>Splurge</strong> para disfrutar de los beneficios que tenemos para ti 
+{% endblock %}
+
+{% block content %} 
+    <section>
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            {% if form.errors %}
+                <p>
+                    Hubo un error con tu registro. Inténtalo de nuevo
+                </p>
+            {% endif%}
+            <div class="row gtr-uniform">
+                <div class="col-6 col-12-xsmall">
+                    <label for="demo-first-name">Nombre</label>
+                    <input type="text" name="first_name" id="demo-fisrt-name" placeholder="Nombre" value=""
+                     required autofocus/>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <label for="demo-last-name">Apellido(s)</label>
+                    <input type="text" name="last_name" id="demo-last-name" placeholder="Apellido(s)" value=""
+                     required/>
+                </div>
+                <div class="col-12">
+                    <label for="demo-email">Correo electrónico</label>
+                    <input type="email" name="email" id="demo-email" placeholder="Correo electrónico" value=""
+                     required/>
+                </div>
+                <div class="col-12">
+                    <label for="demo-username">Nombre de usuario</label>
+                    <input type="text" name="username" id="demo-username" placeholder="Nombre de usuario" value=""
+                     required/>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <label for="demo-pass">Contraseña</label>
+                        <input type="password" name="password" id="demo-pass" placeholder="Contraseña" value=""
+                           required/>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <label for="demo-pass_conf">Confirme su contraseña</label>
+                    <input type="password" name="password_confirmation" id="demo-pass-conf" placeholder="Confirme su contraseña" value=""
+                     required/>
+                </div>
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input type="submit" value="Regístrate" class="primary" /></li>
+                        <li><input type="reset" value="Resetear" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </section>
+{% endblock %}
